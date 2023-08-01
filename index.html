@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Tables</title>
+</head>
+<body>
+
+    <h1>Javascript Assignment 01</h1>
+
+    <script>
+        function printMultiplicationTables(start, end) {
+            for (let i = start; i <= end; i++) {
+                document.write(`Table of ${i}: <br>`);
+                for (let j = 1; j <= 10; j++) {
+                    const result = i * j;
+                    document.write(`${i} x ${j} = ${result} <br>`);
+                }
+                document.write("<br>");
+            }
+        }
+
+        function startProgram() {
+            const startRange = parseInt(prompt("Enter the start range (2 to 20):"));
+            const endRange = parseInt(prompt("Enter the end range (2 to 20):"));
+
+            if (isNaN(startRange) || isNaN(endRange) || startRange < 2 || endRange > 20 || startRange > endRange) {
+                console.log("Invalid input. Range must be between 2 and 20.");
+            } else {
+                printMultiplicationTables(startRange, endRange);
+            }
+        }
+
+        startProgram();
+    </script>
+</body>
+</html>
